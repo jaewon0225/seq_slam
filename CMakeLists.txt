@@ -27,7 +27,7 @@ find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 target_link_libraries(seqslam
     PUBLIC
-        ${OpenCV_LIBS}
+    ${OpenCV_LIBS}
 )
 
 install(TARGETS seqslam DESTINATION lib
