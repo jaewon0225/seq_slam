@@ -1,27 +1,27 @@
 #ifndef PREPROCESSOR_H
 #define PREPROCESSOR_H
 
-#include <opencv2/opencv.hpp>
-#include <iostream>
-#include <vector>
-#include <string>
 #include <filesystem>
+#include <iostream>
+#include <opencv2/opencv.hpp>
+#include <string>
+#include <vector>
 
-namespace seqslam{
-class Preprocessor{
+namespace seqslam {
+class Preprocessor {
 public:
-    Preprocessor(const std::string& directory_path);
+  Preprocessor(const std::string &directory_path);
 
 private:
-    std::vector<cv::Mat> original;  
-    std::vector<cv::Mat> result;
+  std::vector<cv::Mat> original;
+  std::vector<cv::Mat> result;
 
 public:
-    std::vector<cv::Mat>& getResult();
+  std::vector<cv::Mat> &getResult();
 
 private:
-    void preprocess();
-    void loadImagesFromDirectory(const std::string& directory_path);
+  void preprocess();
+  void loadImagesFromDirectory(const std::string &directory_path);
 };
 } // namespace seqslam
 

@@ -5,18 +5,18 @@
 #include <opencv2/opencv.hpp>
 #include <vector>
 
-namespace seqslam{
-class SequenceMatcher{
-public:  
-    SequenceMatcher(int sequence_legth);
+namespace seqslam {
+class SequenceMatcher {
+public:
+  SequenceMatcher(int sequence_legth);
 
 private:
-    int sequence_length;
+  int sequence_length;
 
 public:
-    double calculateDifference(const cv::Mat& image1, const cv::Mat& image2);
-    int findBestMatch(const std::vector<cv::Mat>& images, const cv::Mat& query);
-    int findSequence(const std::vector<cv::Mat>& images, const cv::Mat& query);
+  double calculateDifference(const cv::Mat &image1, const cv::Mat &image2);
+  int findBestMatch(const std::vector<cv::Mat> &images, const cv::Mat &query);
+  int findSequence(const std::vector<cv::Mat> &images, const cv::Mat &query);
 };
 } // namespace seqslam
 
