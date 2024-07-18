@@ -24,7 +24,7 @@ std::vector<cv::Mat>& seqslam::Preprocessor::getResult() {
 }
 
 void seqslam::Preprocessor::preprocess() { 
-    cv::Mat gray, resized;
+    cv::Mat gray, resized; 
     for (const auto& image : original) {
         cv::cvtColor(image, gray, cv::COLOR_BGR2GRAY);
         cv::resize(gray, resized, cv::Size(64, 64));
