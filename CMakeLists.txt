@@ -9,7 +9,7 @@ include_directories(src
 add_library(seqslam 
             src/preprocessor.cpp
             src/sequence_matcher.cpp
-)
+ )
 
 target_include_directories(seqslam
     PUBLIC
