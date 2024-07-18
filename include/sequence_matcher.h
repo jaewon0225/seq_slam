@@ -7,7 +7,7 @@
 
 namespace seqslam{
 class SequenceMatcher{
-public: 
+public:  
     SequenceMatcher(int sequence_legth);
 
 private:

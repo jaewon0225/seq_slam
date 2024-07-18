@@ -13,7 +13,7 @@ public:
     Preprocessor(const std::string& directory_path);
 
 private:
-    std::vector<cv::Mat> original; 
+    std::vector<cv::Mat> original;  
     std::vector<cv::Mat> result;
 
 public:
