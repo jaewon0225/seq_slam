@@ -7,8 +7,7 @@
 #include <string>
 
 namespace seqslam {
-void Preprocessor::loadImagesFromDirectory(
-    const std::string &directory_path) {
+void Preprocessor::loadImagesFromDirectory(const std::string &directory_path) {
   for (const auto &entry :
        std::filesystem::directory_iterator(directory_path)) {
     if (entry.is_regular_file()) {
