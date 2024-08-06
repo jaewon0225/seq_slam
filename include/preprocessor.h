@@ -1,9 +1,9 @@
-#ifndef PREPROCESSOR_H
-#define PREPROCESSOR_H
+#pragma once
+
+#include <opencv2/opencv.hpp>
 
 #include <filesystem>
 #include <iostream>
-#include <opencv2/opencv.hpp>
 #include <string>
 #include <vector>
 
@@ -24,5 +24,3 @@ private:
   void loadImagesFromDirectory(const std::string &directory_path);
 };
 } // namespace seqslam
-
-#endif // PREPROCESSOR_H

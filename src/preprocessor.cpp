@@ -1,10 +1,13 @@
 #include "preprocessor.h"
-#include <filesystem>
+
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/imgproc.hpp>
+
+#include <filesystem>
 #include <string>
 
-void seqslam::Preprocessor::loadImagesFromDirectory(
+namespace seqslam {
+void Preprocessor::loadImagesFromDirectory(
     const std::string &directory_path) {
   for (const auto &entry :
        std::filesystem::directory_iterator(directory_path)) {
@@ -21,9 +24,9 @@ void seqslam::Preprocessor::loadImagesFromDirectory(
   }
 }
 
-std::vector<cv::Mat> &seqslam::Preprocessor::getResult() { return result; }
+std::vector<cv::Mat> &Preprocessor::getResult() { return result; }
 
-void seqslam::Preprocessor::preprocess() {
+void Preprocessor::preprocess() {
   cv::Mat gray, resized;
   for (const auto &image : original) {
     cv::cvtColor(image, gray, cv::COLOR_BGR2GRAY);
@@ -32,7 +35,8 @@ void seqslam::Preprocessor::preprocess() {
   }
 }
 
-seqslam::Preprocessor::Preprocessor(const std::string &directory_path) {
+Preprocessor::Preprocessor(const std::string &directory_path) {
   loadImagesFromDirectory(directory_path);
   preprocess();
 }
+} // namespace seqslam

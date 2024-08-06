@@ -14,7 +14,8 @@ add_library(seqslam
 target_include_directories(seqslam
     PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
-    ${CMAKE_INSTALL_INCLUDEDIR})
+    ${CMAKE_INSTALL_INCLUDEDIR}
+)
 
 set(PUBLIC_HEADERS
     preprocessor.h
@@ -35,14 +36,5 @@ install(TARGETS seqslam DESTINATION lib
 )
 
 # -----------------------------
-project(example)
-
-include_directories(src
-                    include)
-
-set(SOURCES src/example.cpp)
-add_executable(${PROJECT_NAME} ${SOURCES})
-
-find_package(OpenCV REQUIRED)
-include_directories(${OpenCV_INCLUDE_DIRS})
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
+# Example usage
+add_subdirectory( example )
