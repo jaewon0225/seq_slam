@@ -1,13 +1,6 @@
 #include "sequence_matcher.h"
 
 namespace seqslam {
-double SequenceMatcher::calculateDifference(const cv::Mat &image1,
-                                            const cv::Mat &image2) {
-  cv::Mat diff;
-  cv::absdiff(image1, image2, diff);
-  return cv::sum(diff)[0];
-}
-
 cv::Mat calculateDifferenceMatrix(const std::vector<cv::Mat> &map_images,
                                   const std::vector<cv::Mat> &query_images) {
   int n = map_images.size();
