@@ -14,9 +14,11 @@ private:
   int sequence_length;
 
 public:
-  double calculateDifference(const cv::Mat& image1, const cv::Mat& image2);
-  int calculateDifferenceMatrix(const std::vector<cv::Mat>& map_images, const std::vector<cv::Mat>& query_images);
-  cv::Mat contrastEnhancement(const cv::Mat& diffMatrix);
-  std::vector<int> findOptimalPath(const cv::Mat& enhanced_matrix, int sequence_length);
+  double calculateDifference(const cv::Mat &image1, const cv::Mat &image2);
+  int calculateDifferenceMatrix(const std::vector<cv::Mat> &map_images,
+                                const std::vector<cv::Mat> &query_images);
+  cv::Mat contrastEnhancement(const cv::Mat &diffMatrix);
+  std::vector<int> findOptimalPath(const cv::Mat &enhanced_matrix,
+                                   int sequence_length);
 };
 } // namespace seqslam
