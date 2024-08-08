@@ -1,8 +1,9 @@
 #include "sequence_matcher.h"
 
 namespace seqslam {
-cv::Mat SequenceMatcher::calculateDifferenceMatrix(const std::vector<cv::Mat> &map_images,
-                                  const std::vector<cv::Mat> &query_images) {
+cv::Mat SequenceMatcher::calculateDifferenceMatrix(
+    const std::vector<cv::Mat> &map_images,
+    const std::vector<cv::Mat> &query_images) {
   int n = map_images.size();
   int m = query_images.size();
   cv::Mat diff_matrix = cv::Mat::zeros(n, m, CV_32F);
@@ -24,7 +25,8 @@ cv::Mat SequenceMatcher::contrastEnhancement(const cv::Mat &diff_matrix) {
   return enhanced;
 }
 
-std::vector<int> SequenceMatcher::findOptimalPath(const cv::Mat &enhanced_matrix,
+std::vector<int>
+SequenceMatcher::findOptimalPath(const cv::Mat &enhanced_matrix,
                                  int sequence_length) {
   int n = enhanced_matrix.rows;
   int m = enhanced_matrix.cols;
