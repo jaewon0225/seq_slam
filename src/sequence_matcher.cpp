@@ -19,15 +19,18 @@ cv::Mat SequenceMatcher::calculateDifferenceMatrix(
   return diff_matrix;
 }
 
-template<typename T>
-cv::Mat SequenceMatcher::calculateDifferenceMatrix(const std::span<T>& map_entities, const std::span<T>& query_entities) {
+template <typename T>
+cv::Mat
+SequenceMatcher::calculateDifferenceMatrix(const std::span<T> &map_entities,
+                                           const std::span<T> &query_entities) {
   int n = map_entities.size();
   int m = query_entities.size();
   cv::Mat diff_matrix = cv::Mat::zeros(n, m, CV_32F);
-  
+
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < m; j++) {
-      diff_matrix.at<float>(i, j) = (map_entities - query_entities).absdiff();;
+      diff_matrix.at<float>(i, j) = (map_entities - query_entities).absdiff();
+      ;
     }
   }
 }
